@@ -12,6 +12,14 @@ var getUniqueId = function(vendorText, statusText, color, scale){
                 .toString('base64');
 };
 
+var tempdir = __dirname + '/tmp';
+fs.mkdir(tempdir, function(err){
+  if (err){
+    throw err;
+  }
+});
+
+
 var app = connect();
 app.use(urlgreyConnect());
 app.use(function(req, res) {
@@ -20,9 +28,9 @@ app.use(function(req, res) {
   var color = req.uri.query().color || 'lightgray';
   var scale = req.uri.query().scale || 1;
 
-  var filename = '/tmp/' + getUniqueId(vendorText, statusText, color, scale) + '.png';
+  var filename = tempdir + '/' + getUniqueId(vendorText, statusText, color, scale) + '.png';
 
-  shielded(vendorText, statusText, color, filename, scale, function(err){
+  shielded(vendorText, statusText, color, filename, scale, tempdir, function(err){
     if (!err){
       res.writeHead(200, {'Content-Type': 'image/png'});
       var png = fs.createReadStream(filename);
