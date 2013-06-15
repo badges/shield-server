@@ -1,0 +1,25 @@
+{
+  "name": "shield-server",
+  "version": "0.0.0",
+  "description": "http service for creating github shield PNGs ala https://github.com/olivierlacan/shields/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cainus/shield-server.git"
+  },
+  "keywords": [
+    "shields",
+    "github",
+    "badges"
+  ],
+  "author": "Gregg Caines",
+  "license": "BSD",
+  "dependencies": {
+    "shielded": "0.0.4",
+    "connect": "2.7.11",
+    "urlgrey-connect": "~0.1.0"
+  }
+}
