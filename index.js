@@ -14,7 +14,8 @@ var getUniqueId = function(vendorText, statusText, color, scale){
 
 var tempdir = __dirname + '/tmp';
 fs.mkdir(tempdir, function(err){
-  if (err){
+  if (err && !err.message.match(/^EEXIST/)){
+    // don't care if the dir already exists.
     throw err;
   }
 });
