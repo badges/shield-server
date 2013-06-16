@@ -18,8 +18,9 @@
   "author": "Gregg Caines",
   "license": "BSD",
   "dependencies": {
-    "shielded": "0.1.0",
+    "shielded": "0.2.0",
     "connect": "2.7.11",
-    "urlgrey-connect": "~0.1.0"
+    "urlgrey-connect": "~0.1.0",
+    "log-driver": "~1.2.1"
   }
 }
