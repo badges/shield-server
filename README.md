@@ -5,3 +5,4 @@ It uses the shielded library ( https://github.com/cainus/shielded ).
 
 It runs on heroku out-of-the-box, but can easily run elsewhere.
 
+See also the golang version by @jbowes :  https://github.com/jbowes/buckler .  It probably vastly outperforms this library.
